@@ -1,1 +1,1 @@
-# Lesson_Project_FPGA_Design
+## Basic FPGA design for university lesson project 
