@@ -1,0 +1,12 @@
+verilog xil_defaultlib  \
+"../../../bd/design_1/ip/design_1_kcpsm6_0_0/sim/design_1_kcpsm6_0_0.v" \
+"../../../bd/design_1/ip/design_1_kcpsm6_1_0/sim/design_1_kcpsm6_1_0.v" \
+"../../../bd/design_1/ip/design_1_blk_mem_gen_0_0/sim/design_1_blk_mem_gen_0_0.v" \
+"../../../bd/design_1/ip/design_1_xlconstant_0_0/sim/design_1_xlconstant_0_0.v" \
+"../../../bd/design_1/ip/design_1_BRAM1_0_0/sim/design_1_BRAM1_0_0.v" \
+"../../../bd/design_1/ip/design_1_BRAM0_0_0/sim/design_1_BRAM0_0_0.v" \
+"../../../bd/design_1/sim/design_1.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

@@ -1,0 +1,8 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../vivado_project.srcs/sources_1/imports/EHB_embedded/KCPSM6_Release9_30Sept14/kcpsm6.vhd" \
+"../../../../vivado_project.srcs/sources_1/imports/Final/fidex/BRAM0.vhd" \
+"../../../../vivado_project.srcs/sources_1/imports/fidex_even/BRAM1.vhd" \
+
+# Do not sort compile order
+nosort

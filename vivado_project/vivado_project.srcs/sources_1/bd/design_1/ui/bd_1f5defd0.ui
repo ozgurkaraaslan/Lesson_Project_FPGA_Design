@@ -1,0 +1,48 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.590722",
+   "Default View_TopLeft":"-261,-34",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
+#  -string -flagsOSRD
+preplace port port-id_clk_0 -pg 1 -lvl 0 -x -20 -y 760 -defaultsOSRD
+preplace port port-id_reset_0 -pg 1 -lvl 0 -x -20 -y 950 -defaultsOSRD
+preplace port port-id_clk_1 -pg 1 -lvl 0 -x -20 -y 310 -defaultsOSRD
+preplace port port-id_interrupt_ack_0 -pg 1 -lvl 4 -x 990 -y 220 -defaultsOSRD
+preplace port port-id_k_write_strobe_0 -pg 1 -lvl 4 -x 990 -y 160 -defaultsOSRD
+preplace port port-id_read_strobe_0 -pg 1 -lvl 4 -x 990 -y 190 -defaultsOSRD
+preplace inst kcpsm6_1 -pg 1 -lvl 2 -x 550 -y 140 -defaultsOSRD
+preplace inst blk_mem_gen_0 -pg 1 -lvl 3 -x 870 -y 380 -defaultsOSRD
+preplace inst xlconstant_0 -pg 1 -lvl 1 -x 180 -y 890 -defaultsOSRD
+preplace inst kcpsm6_0 -pg 1 -lvl 2 -x 550 -y 790 -defaultsOSRD
+preplace inst BRAM0_0 -pg 1 -lvl 1 -x 180 -y 740 -defaultsOSRD
+preplace inst BRAM1_0 -pg 1 -lvl 1 -x 180 -y 570 -defaultsOSRD
+preplace netloc BRAM0_0_instruction 1 1 1 N 740
+preplace netloc BRAM1_0_instruction 1 1 1 320 90n
+preplace netloc blk_mem_gen_0_douta 1 1 2 370 350 N
+preplace netloc blk_mem_gen_0_doutb 1 1 2 370 470 NJ
+preplace netloc clk_0_1 1 0 3 10 820 330 430 NJ
+preplace netloc clk_1_1 1 0 3 0 310 360 310 NJ
+preplace netloc kcpsm6_0_address 1 0 3 20 660 NJ 660 700
+preplace netloc kcpsm6_0_bram_enable 1 0 3 20 960 NJ 960 700
+preplace netloc kcpsm6_0_out_port 1 2 1 740 450n
+preplace netloc kcpsm6_0_port_id 1 2 1 720 410n
+preplace netloc kcpsm6_0_write_strobe 1 2 1 750 490n
+preplace netloc kcpsm6_1_address 1 0 3 10 270 NJ 270 710
+preplace netloc kcpsm6_1_bram_enable 1 0 3 20 280 NJ 280 700
+preplace netloc kcpsm6_1_interrupt_ack 1 2 2 NJ 210 970J
+preplace netloc kcpsm6_1_k_write_strobe 1 2 2 720J 160 NJ
+preplace netloc kcpsm6_1_out_port 1 2 1 750 110n
+preplace netloc kcpsm6_1_port_id 1 2 1 740 130n
+preplace netloc kcpsm6_1_read_strobe 1 2 2 NJ 190 NJ
+preplace netloc kcpsm6_1_write_strobe 1 2 1 730 150n
+preplace netloc reset_0_1 1 0 2 NJ 950 350
+preplace netloc xlconstant_0_dout 1 1 1 340 150n
+levelinfo -pg 1 -20 180 550 870 990
+pagesize -pg 1 -db -bbox -sgen -120 0 1150 970
+"
+}
+{
+   "da_board_cnt":"10",
+   "da_clkrst_cnt":"4"
+}

@@ -1,0 +1,47 @@
+;RISCy Mission
+
+#ifDef proc::xPblze6
+
+			#set proc::xPblze6::scrpdSize,				64						; [64, 128, 256]
+			#set proc::xPblze6::clkFreq,				100000000				; in Hz
+			
+			#set IOdev::BRAM0::en,						TRUE
+			#set IOdev::BRAM0::type,					mem
+			#set IOdev::BRAM0::size,					4096
+			
+			#set instmem::pageSize,						4096
+			#set instmem::pageCount,					1
+			#set instmem::sharedMemLocation,			loMem	; [ hiMem, loMem ]
+			
+			#set IOdev::BRAM0::value,					instMem
+			
+			#set IOdev::BRAM0::vhdlEn,					TRUE
+			#set IOdev::BRAM0::vhdlEntityName,			"BRAM0"
+			#set IOdev::BRAM0::vhdlTmplFile,			"ROM_form.vhd"
+			#set IOdev::BRAM0::vhdlTargetFile,			"BRAM0.vhd"
+		#endIf
+		
+#ORG ADDR, 0x000
+
+main: 	LOAD s0,0 ; s0 holds address value to read from the ram
+		LOAD s1,30 ; s1 holds address value to write to the ram
+
+loop:	LOAD s5,s0
+		LOAD s6,s1
+		LOAD s7,s3
+		RDPRT s7,(s5) ; write value of s0 to the s3 register
+		WRPRT s7,(s6) ; write s3 value to the s1 address
+		ADD s0,6 ; increment of address value of ram reading
+		ADD s1,1 ; increment of address value for writing to the ram
+		ADD s4,1 ; row check
+		COMP s4,6
+		JUMP C, loop
+		
+		ADD s2, 2
+		LOAD s4, 0
+		LOAD s0,s2
+		LOAD s3, s2
+		COMP s2, 6
+		JUMP C, loop	
+		
+end:	JUMP end

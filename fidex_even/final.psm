@@ -1,0 +1,50 @@
+;RISCy Mission
+
+#ifDef proc::xPblze6
+
+			#set proc::xPblze6::scrpdSize,				64						; [64, 128, 256]
+			#set proc::xPblze6::clkFreq,				100000000				; in Hz
+			
+			#set IOdev::BRAM1::en,						TRUE
+			#set IOdev::BRAM1::type,					mem
+			#set IOdev::BRAM1::size,					4096
+			
+			#set instmem::pageSize,						4096
+			#set instmem::pageCount,					1
+			#set instmem::sharedMemLocation,			loMem	; [ hiMem, loMem ]
+			
+			#set IOdev::BRAM1::value,					instMem
+			
+			#set IOdev::BRAM1::vhdlEn,					TRUE
+			#set IOdev::BRAM1::vhdlEntityName,			"BRAM1"
+			#set IOdev::BRAM1::vhdlTmplFile,			"ROM_form.vhd"
+			#set IOdev::BRAM1::vhdlTargetFile,			"BRAM1.vhd"
+		#endIf
+		
+#ORG ADDR, 0x000
+
+main: 	LOAD s0,1
+		LOAD s1,50
+		LOAD s2,1
+		
+
+loop:	LOAD s5,s0
+		LOAD s6,s1
+		LOAD s7,s3
+		
+		RDPRT s7,(s5)
+		WRPRT s7,(s6) ; s0 value  and  s1 default ram value to write
+		ADD s0, 6
+		ADD s1, 1
+		ADD s4, 1
+		COMP s4, 6
+		JUMP C, loop
+		
+		ADD s2, 2
+		LOAD s4, 0
+		LOAD s0, s2
+		LOAD s3, s2
+		COMP s2, 7
+		JUMP C, loop
+		
+end:	JUMP end
